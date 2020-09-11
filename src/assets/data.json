@@ -1,0 +1,18 @@
+{
+    "cards": [
+        {
+            "id": 1,
+            "name": "Product One",
+            "price": 39.99,
+            "color": "Yellow",
+            "location": "Dortmund"
+        },
+        {
+            "id": 2,
+            "name": "Product Two",
+            "price": 8.95,
+            "color": "Black",
+            "location": "Mainz"
+        }
+    ]
+}

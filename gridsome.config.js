@@ -6,5 +6,7 @@
 
 module.exports = {
   siteName: 'Localdash',
-  plugins: []
+  plugins: [],
+  siteUrl: 'https://celebritydeveloper.github.io',
+  pathPrefix: '/localdash-site',
 }

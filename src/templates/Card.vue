@@ -16,23 +16,55 @@
       <vue-glide-slide>
         <div class="new-card">
           <div class="new-card-img">
-            <g-image src="~/assets/images/duplex-2.jpeg" width="500"/>
+            <g-image src="~/assets/images/localdash.png" width="500"/>
           </div>
           <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
             <b-row>
               <b-col>
-                <p class="h3 new-card-title">{{$context.title}}</p>
-                <p class="new-card-sub">${{$context.price}}</p>
-              </b-col>
-            </b-row>
-            <b-row>
-              <b-col>
-                <p class="property-type">Sample Data</p>
-                <p class="property-price">{{$context.color}}</p>
-              </b-col>
-              <b-col>
-                <p class="property-type">Sample Data</p>
-                <p class="property-price">{{$context.location}}</p>
+                <div class="info mb-4">
+                  <p class="h5 info-title text-center mb-4">Allgemeine Informationen</p>
+                  <div class="info-single d-flex justify-content-evenly">
+                    <p class="h6 info-sub-title">Unternehmen: </p>
+                    <p class="info-text ml-5">Name</p>
+                  </div>
+                  <div class="info-single d-flex justify-content-evenly align-items-start">
+                    <p class="h6 info-sub-title">Branche: </p>
+                    <p class="info-text ml-5">Branche</p>
+                  </div>
+                </div>
+                <div class="info mb-4">
+                  <p class="h5 info-title text-center mb-4">Ihre Kontaktangaben</p>
+                  <div class="info-single d-flex justify-content-evenly align-items-start">
+                    <p class="h6 info-sub-title">Telefon: </p>
+                    <p class="info-text ml-5">Telefon</p>
+                  </div>
+                  <div class="info-single d-flex justify-content-evenly align-items-start">
+                    <p class="h6 info-sub-title">E-Mail: </p>
+                    <p class="info-text ml-5">Mail</p>
+                  </div>
+                  <div class="info-single d-flex justify-content-evenly align-items-start">
+                    <p class="h6 info-sub-title">Webseite: </p>
+                    <p class="info-text ml-5">Webseite</p>
+                  </div>
+                  <div class="info-single d-flex justify-content-evenly align-items-start">
+                    <p class="h6 info-sub-title">Adresse: </p>
+                    <p class="info-text ml-5">Adresse, PLZ, Town</p>
+                  </div>
+                  <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15899.108677305778!2d7.9939793!3d4.9766619!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3a7cb7a8ef4cda5b!2sDomino&#39;s%20Pizza%20Uyo!5e0!3m2!1sen!2sng!4v1599942961585!5m2!1sen!2sng" width="100%" height="180" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                  </div>
+                </div>
+                <div class="info mb-4">
+                  <p class="h5 info-title text-center mb-4">Weitere Informationen</p>
+                  <div class="info-single d-flex justify-content-evenly align-items-start">
+                    <p class="h6 info-sub-title">Schlagworte: </p>
+                    <p class="info-text ml-5">Keywords</p>
+                  </div>
+                  <div class="info-single d-flex justify-content-evenly align-items-start">
+                    <p class="h6">Angebotene Marken: </p>
+                    <p class="info-text ml-5">Infos_yp</p>
+                  </div>
+                </div>
               </b-col>
             </b-row>
           </div>
@@ -259,7 +291,7 @@ export default {
     }
 
     .new-card-img {
-      border-radius: 6px;
+      border: 1px solid #5eb9e5;
       display: flex;
       overflow: hidden;
       height: 150px;
@@ -297,6 +329,21 @@ export default {
     .swiper-slide {
       border: 1px solid red;
       width: 120px;
+    }
+
+    .info-title {
+      color: #5eb9e5;
+      font-weight: bold;
+      
+    }
+
+    .info-sub-title {
+      font-weight: bold;
+      text-align: right;
+    }
+
+    .info-text {
+      font-weight: lighter !important;
     }
 
 </style>

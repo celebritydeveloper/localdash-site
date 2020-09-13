@@ -1,4 +1,3 @@
-<!-- /src/templates/Product.vue -->
 <template>
   <Layout>
     <b-container>
@@ -11,6 +10,7 @@
       :hoverpause="hoverpause"
       :breakpoints="breakpoints"
       :gap="gap"
+      :rewind="rewind"
       
       >
       <vue-glide-slide>
@@ -61,7 +61,7 @@
                     <p class="info-text ml-5">Keywords</p>
                   </div>
                   <div class="info-single d-flex justify-content-evenly align-items-start">
-                    <p class="h6">Angebotene Marken: </p>
+                    <p class="h6 info-sub-title">Angebotene Marken: </p>
                     <p class="info-text ml-5">Infos_yp</p>
                   </div>
                 </div>
@@ -70,57 +70,36 @@
           </div>
         </div>
       </vue-glide-slide>
-      <!--<vue-glide-slide>
+      <vue-glide-slide>
         <div class="new-card">
-          <div class="new-card-img">
-            <g-image src="~/assets/images/duplex-2.jpeg" width="500"/>
+        <div class="new-card-img">
+            <g-image src="~/assets/images/localdash.png" width="500"/>
           </div>
           <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
-            <b-row>
-              <b-col>
-                <p class="h3 new-card-title">Sample Data</p>
-                <p class="new-card-sub">Hello World</p>
-              </b-col>
-            </b-row>
-            <b-row>
-              <b-col>
-                <p class="property-type">Sample Data</p>
-                <p class="property-price">Hello World</p>
-              </b-col>
-              <b-col>
-                <p class="property-type">Sample Data</p>
-                <p class="property-price">Hello World</p>
-              </b-col>
-            </b-row>
+            <div class="gmb-img">
+            <center>
+           <g-image src="~/assets/images/localdash.png"/>
+            </center>
+            </div>
           </div>
         </div>
       </vue-glide-slide>
       <vue-glide-slide>
         <div class="new-card">
-          <div class="new-card-img">
-            <g-image src="~/assets/images/duplex-2.jpeg" width="500"/>
+         <div class="new-card-img">
+            <g-image src="~/assets/images/localdash.png" width="500"/>
           </div>
           <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
-            <b-row>
-              <b-col>
-                <p class="h3 new-card-title">Sample Data</p>
-                <p class="new-card-sub">Hello World</p>
-              </b-col>
-            </b-row>
-            <b-row>
-              <b-col>
-                <p class="property-type">Sample Data</p>
-                <p class="property-price">Hello World</p>
-              </b-col>
-              <b-col>
-                <p class="property-type">Sample Data</p>
-                <p class="property-price">Hello World</p>
-              </b-col>
-            </b-row>
+            <p class="h5 info-title text-center mb-4">Weitere Informationen</p>
+            <p class="info-text card-1-text">Sehr geehrte Damen und Herren,<br>
+            wie Sie sicher bereits mitbekommen haben werden Bewertungen auf diversen, teilweise Branchenspezifischen Bewertungsplattformen immer wichtiger. Die Speerspitze der Plattformen bildet hier Google mit dem Service “My Business”. So werden Google Nutzern, die nach einer speziellen Dienstleistung suchen, direkt die besten 3 Unternehmen aus der Region angezeigt. Diese Platzierung in den Top 3 der Google Suche, ist durch die korrekte Nutzung von Google My Business möglich. Ist diese Position erreicht, erhalten Sie täglich die Aufmerksamkeit von Interessenten Ihrer Branche, die gerade aktiv nach einem lokalen Dienstleister suchen. Durch die guten Bewertungen dieser Top 3 werden 79% (Quelle: Google.com) aller Suchanfragen zumindest zu einem Kontakt per Telefon oder auch zu einem direkten Besuch vor Ort. Die Top 1 bekommt natürlich den größten Anteil aller Suchanfragen ab. Der Unterschied zu gewöhnlichem Marketing ist hier, dass man den Interessenten genau dann mit Ihrem Unternehmen konfrontiert, wenn er gerade aktiv nach einem Anbieter sucht.
+            Die Qualität dieser Suchanfragen ist unbezahlbar und nur durch die Top 3 Platzierung erreichbar.<br><br>
+            Weiter haben wir festgestellt, dass viele unserer Kunden, die zu 90% aus lokalen Dienstleistern wie Ihnen bestehen, oft dieselben Probleme in der Nutzung des Internet für Ihre Kundenkommunikation haben. Durch Unwissenheit wird z.B. häufig die Chance ausgelassen, Ihre Kunden auf Ihren Smartphones verlässlich zu erreichen. Dies kann zB genutzt werden um an schwachen Tagen mit besonderen Angeboten an Ihre Bestandskunden spontan für Umsätze zu sorgen, die ohne dieses kleine technische System nicht erzielt worden wären. 
+            </p>
           </div>
         </div>
       </vue-glide-slide>
-      <vue-glide-slide>
+     <!-- <vue-glide-slide>
         <div class="new-card">
           <div class="new-card-img">
             <g-image src="~/assets/images/duplex-2.jpeg" width="500"/>
@@ -186,15 +165,16 @@ export default {
     name: 'carrousel',
     data() {
       return {
-        perView: 2,
-        startAt: 1,
-        type: "carousel",
+        perView: 1,
+        startAt: 0,
         autoplay: false,
         hoverpause: true,
         keyboard: true,
         bound: true,
         dragThreshold: 80,
         gap: 30,
+        rewind: false,
+        rewindDuration: 0,
         animationDuration: 200,
         info: null,
         breakpoints: {
@@ -296,13 +276,14 @@ export default {
       overflow: hidden;
       height: 150px;
       padding: 0.3rem 0.3rem;
+      margin-top: 5px;
     }
 
     .new-card-img img{
       display: flex;
       border-radius: 6px;
-      height: 150px;
-      object-fit: cover;
+      height: 175px;
+      object-fit: none;
       width: 100%;
     }
 
@@ -344,6 +325,15 @@ export default {
 
     .info-text {
       font-weight: lighter !important;
+    }
+
+    .gmb-img img{
+     object-fit: fill !important;
+     width: 80% !important;   
+    }
+
+    .card-1-text{
+     padding: 10px;       
     }
 
 </style>

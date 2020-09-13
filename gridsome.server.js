@@ -12,14 +12,20 @@ module.exports = function (api) {
     // Create pages from data
     data['cards'].forEach(card => {
       createPage({
-        path: `/card/${card.id}/`, // Create route
+        path: `/${card.Id}/`, // Create route
         component: './src/templates/Card.vue',
         context: {
-          id: card.id,
-          title: card.name,
-          price: card.price,
-          color: card.color,
-          location: card.location,
+          id: card.Id,
+          name: card.Name,
+          branch: card.Branche,
+          phone: card.Telefon,
+          email: card.Mail,
+          website: card.Webseite,
+          address: card.Strasse,
+          postal: card.PLZ,
+          town: card.Stadt,
+          keywords: card.Keywords,
+          brands: card.infos_yp
         }
       })
     })

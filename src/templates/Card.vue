@@ -23,32 +23,33 @@
               <b-col>
                 <div class="info mb-4">
                   <p class="h5 info-title text-center mb-4">Allgemeine Informationen</p>
+                  <b-table stacked items="Hello, Wolrd"></b-table>
                   <div class="info-single d-flex justify-content-evenly">
                     <p class="h6 info-sub-title">Unternehmen: </p>
-                    <p class="info-text ml-5">Name</p>
+                    <p class="info-text ml-5">{{$context.name}}</p>
                   </div>
                   <div class="info-single d-flex justify-content-evenly align-items-start">
                     <p class="h6 info-sub-title">Branche: </p>
-                    <p class="info-text ml-5">Branche</p>
+                    <p class="info-text ml-5">{{$context.branch}}</p>
                   </div>
                 </div>
                 <div class="info mb-4">
                   <p class="h5 info-title text-center mb-4">Ihre Kontaktangaben</p>
                   <div class="info-single d-flex justify-content-evenly align-items-start">
                     <p class="h6 info-sub-title">Telefon: </p>
-                    <p class="info-text ml-5">Telefon</p>
+                    <p class="info-text ml-5">{{$context.phone}}</p>
                   </div>
                   <div class="info-single d-flex justify-content-evenly align-items-start">
                     <p class="h6 info-sub-title">E-Mail: </p>
-                    <p class="info-text ml-5">Mail</p>
+                    <p class="info-text ml-5">{{$context.email}}</p>
                   </div>
                   <div class="info-single d-flex justify-content-evenly align-items-start">
                     <p class="h6 info-sub-title">Webseite: </p>
-                    <p class="info-text ml-5">Webseite</p>
+                    <p class="info-text ml-5">{{$context.website}}</p>
                   </div>
                   <div class="info-single d-flex justify-content-evenly align-items-start">
                     <p class="h6 info-sub-title">Adresse: </p>
-                    <p class="info-text ml-5">Adresse, PLZ, Town</p>
+                    <p class="info-text ml-5">{{$context.address}}, {{$context.postal}}, {{$context.town}}</p>
                   </div>
                   <div>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15899.108677305778!2d7.9939793!3d4.9766619!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3a7cb7a8ef4cda5b!2sDomino&#39;s%20Pizza%20Uyo!5e0!3m2!1sen!2sng!4v1599942961585!5m2!1sen!2sng" width="100%" height="180" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
@@ -58,11 +59,11 @@
                   <p class="h5 info-title text-center mb-4">Weitere Informationen</p>
                   <div class="info-single d-flex justify-content-evenly align-items-start">
                     <p class="h6 info-sub-title">Schlagworte: </p>
-                    <p class="info-text ml-5">Keywords</p>
+                    <p class="info-text ml-5">{{$context.keywords}}</p>
                   </div>
                   <div class="info-single d-flex justify-content-evenly align-items-start">
                     <p class="h6 info-sub-title">Angebotene Marken: </p>
-                    <p class="info-text ml-5">Infos_yp</p>
+                    <p class="info-text ml-5">{{$context.brand}}</p>
                   </div>
                 </div>
               </b-col>
@@ -182,6 +183,9 @@ export default {
             perView: 1,
           },
         },
+        items: [
+          { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
+        ],
         
         swiperOptions: {
           pagination: {

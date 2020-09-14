@@ -80,7 +80,7 @@
                             aria-hidden="false" 
                             tabindex="0"
                             allowfullscreen=""
-                            src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCS2L4dKZ2g10zGbFKTxnV4jlOSWqUwAaE&q=`${$context.address}`&zoom=10">
+                            :src="`https://www.google.com/maps/embed/v1/search?key=AIzaSyCS2L4dKZ2g10zGbFKTxnV4jlOSWqUwAaE&q=${$context.address} + ${$context.town}&zoom=18`">
                           </iframe>
                         </div>
                 </center>

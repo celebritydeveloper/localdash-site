@@ -2,6 +2,176 @@
   <Layout>
     <b-container>
       <b-row align-v="center">
+        <b-container class="new-card-img">
+          <b-row>
+            <b-col>
+              <g-image src="~/assets/images/localdash.png"/>
+            </b-col>
+          </b-row>
+        </b-container>
+        <b-container class="text-center mt-3">
+          <b-row>
+            <b-col>
+              <b-button variant="secondary" @click.prevent="slidePrev" size="lg">Back</b-button>
+            </b-col>
+            <b-col>
+              <b-button variant="secondary" @click.prevent="slideNext" size="lg">Forward</b-button>
+            </b-col>
+          </b-row>
+      </b-container>
+      <hooper ref="carousel" @slide="updateCarousel" class="mb-5" style="height: 100vh;">
+        <slide>
+          <div class="new-card">    
+            <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
+              <b-row>
+                <b-col>
+                  <div class="info mb-4">
+                    <p class="h5 info-title text-left mb-4">Allgemeine Informationen</p>
+                    <center>
+                    <table style="width:90%" class="fixed">
+                        <col width="30%" />
+                            <tr>
+                              <th>Name</th>
+                              <td>{{$context.name}}</td>
+                            </tr>
+                            <tr>
+                              <th>Branche</th>
+                              <td>{{$context.branch}}</td>
+                            </tr>
+                        </table>
+                      </center>  
+                  </div>
+                  <div class="info mb-4">
+                    <p class="h5 info-title text-left mb-4">Ihre Kontaktangaben</p>
+                    <center>
+                    <table style="width:90%" class="fixed">
+                        <col width="30%" />
+                        
+                            <tr>
+                              <th>Telefon</th>
+                              <td>{{$context.phone}}</td>
+                            </tr>
+                            <tr>
+                              <th>E-Mail</th>
+                              <td>{{$context.email}}</td>
+                            </tr>
+                            <tr>
+                              <th>Webseite</th>
+                              <td>{{$context.website}}</td>
+                            </tr>
+                            <tr>
+                              <th>Adresse</th>
+                              <td>{{$context.address}}<br>{{$context.postal}} {{$context.town}}</td>
+                            </tr>
+                          </table>
+                          <div>
+                            <iframe
+                              width="100%"
+                              height="180"
+                              frameborder="0" style="border:0"
+                              aria-hidden="false" 
+                              tabindex="0"
+                              allowfullscreen=""
+                              :src="`https://www.google.com/maps/embed/v1/search?key=AIzaSyCS2L4dKZ2g10zGbFKTxnV4jlOSWqUwAaE&q=${$context.address} + ${$context.town}&zoom=18`">
+                            </iframe>
+                          </div>
+                  </center>
+                  </div>
+                  <div class="info mb-4">
+                    <p class="h5 info-title text-left mb-4">Weitere Informationen</p>
+                    <center>
+                    <table style="width:90%" class="fixed">
+                        <col width="30%" />
+                        
+                            <tr>
+                              <th>Angebotene Marken</th>
+                              <td>{{$context.brands}}</td>
+                            </tr>
+                            <br>
+                            <tr>
+                              <th>Schlagworte</th>
+                              <td>{{$context.keywords}}</td>
+                            </tr>
+                              
+                            
+                        </table>
+                      </center>
+                  </div>
+                </b-col>
+              </b-row>
+            </div>
+          </div>
+        </slide>
+        <slide>
+          <div class="new-card">
+            <!--<div class="new-card-img">
+                <g-image src="~/assets/images/localdash.png" width="500"/>
+            </div>-->
+              <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
+                <div class="gmb-img">
+                <center>
+                  <div>
+                    <g-image :src="`${$context.image}`" width="100%" />   
+                  </div>
+                          
+                </center>
+                </div>
+              </div>
+          </div>
+        </slide>
+
+        <slide>
+          <div class="new-card">
+            <!--<div class="new-card-img">
+                <g-image src="~/assets/images/localdash.png" width="500"/>
+              </div>-->
+              <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
+                      <p class="h5 info-title text-center mb-4">Weitere Informationen</p>
+                    <center>
+                      <div>
+                          {{$context.greview_1_rating}} | {{$context.greview_1_zeit}} | greview_1_reviewer | <span>Localguide?</span>{{$context.greview_1_localguide}} <br> {{$context.greview_1_text}} <br> {{$context.greview_1_beantwortet}}
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </slide>
+
+        <slide>
+          <div class="new-card">
+          <!--<div class="new-card-img">
+              <g-image src="~/assets/images/localdash.png" width="500"/>
+            </div>-->
+            <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
+              <div class="gmb-img">
+              <center>
+            <g-image src="~/assets/images/localdash.png"/>
+              </center>
+              </div>
+            </div>
+          </div>
+        </slide>
+
+        <slide>
+          <div class="new-card">
+          <!--<div class="new-card-img">
+              <g-image src="~/assets/images/localdash.png" width="500"/>
+            </div>-->
+            <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
+              <p class="h5 info-title text-center mb-4">Weitere Informationen</p>
+              <p class="info-text card-1-text">Sehr geehrte Damen und Herren,<br>
+              wie Sie sicher bereits mitbekommen haben werden Bewertungen auf diversen, teilweise Branchenspezifischen Bewertungsplattformen immer wichtiger. Die Speerspitze der Plattformen bildet hier Google mit dem Service “My Business”. So werden Google Nutzern, die nach einer speziellen Dienstleistung suchen, direkt die besten 3 Unternehmen aus der Region angezeigt. Diese Platzierung in den Top 3 der Google Suche, ist durch die korrekte Nutzung von Google My Business möglich. Ist diese Position erreicht, erhalten Sie täglich die Aufmerksamkeit von Interessenten Ihrer Branche, die gerade aktiv nach einem lokalen Dienstleister suchen. Durch die guten Bewertungen dieser Top 3 werden 79% (Quelle: Google.com) aller Suchanfragen zumindest zu einem Kontakt per Telefon oder auch zu einem direkten Besuch vor Ort. Die Top 1 bekommt natürlich den größten Anteil aller Suchanfragen ab. Der Unterschied zu gewöhnlichem Marketing ist hier, dass man den Interessenten genau dann mit Ihrem Unternehmen konfrontiert, wenn er gerade aktiv nach einem Anbieter sucht.
+              Die Qualität dieser Suchanfragen ist unbezahlbar und nur durch die Top 3 Platzierung erreichbar.<br><br>
+              Weiter haben wir festgestellt, dass viele unserer Kunden, die zu 90% aus lokalen Dienstleistern wie Ihnen bestehen, oft dieselben Probleme in der Nutzung des Internet für Ihre Kundenkommunikation haben. Durch Unwissenheit wird z.B. häufig die Chance ausgelassen, Ihre Kunden auf Ihren Smartphones verlässlich zu erreichen. Dies kann zB genutzt werden um an schwachen Tagen mit besonderen Angeboten an Ihre Bestandskunden spontan für Umsätze zu sorgen, die ohne dieses kleine technische System nicht erzielt worden wären. 
+              </p>
+            </div>
+          </div>
+        </slide>
+
+        <slide style="color: white;">
+          slide 3
+        </slide>
+      
+      </hooper>
       <vue-glide 
       :type="type" 
       :startAt="startAt" 
@@ -14,163 +184,20 @@
       
       >
       <vue-glide-slide>
-        <div class="new-card">            
-          <div class="new-card-img">
-            <g-image src="~/assets/images/localdash.png" width="500"/>
-          </div>
-          <div class="text-center mt-3">
-            <b-row>
-              <b-col>
-                <b-button variant="secondary" @click="backward" size="lg">Back</b-button>
-              </b-col>
-              <b-col>
-                <b-button variant="secondary" @click="forward" size="lg">Forward</b-button>
-              </b-col>
-            </b-row>
-            
-          </div>
-            
-          <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
-            <b-row>
-              <b-col>
-                <div class="info mb-4">
-                  <p class="h5 info-title text-left mb-4">Allgemeine Informationen</p>
-                  <center>
-                   <table style="width:90%" class="fixed">
-                      <col width="30%" />
-                          <tr>
-                            <th>Name</th>
-                            <td>{{$context.name}}</td>
-                          </tr>
-                          <tr>
-                            <th>Branche</th>
-                            <td>{{$context.branch}}</td>
-                          </tr>
-                      </table>
-                    </center>  
-                </div>
-                <div class="info mb-4">
-                  <p class="h5 info-title text-left mb-4">Ihre Kontaktangaben</p>
-                  <center>
-                   <table style="width:90%" class="fixed">
-                      <col width="30%" />
-                      
-                          <tr>
-                            <th>Telefon</th>
-                            <td>{{$context.phone}}</td>
-                          </tr>
-                          <tr>
-                            <th>E-Mail</th>
-                            <td>{{$context.email}}</td>
-                          </tr>
-                          <tr>
-                            <th>Webseite</th>
-                            <td>{{$context.website}}</td>
-                          </tr>
-                          <tr>
-                            <th>Adresse</th>
-                            <td>{{$context.address}}<br>{{$context.postal}} {{$context.town}}</td>
-                          </tr>
-                        </table>
-                        <div>
-                          <iframe
-                            width="100%"
-                            height="180"
-                            frameborder="0" style="border:0"
-                            aria-hidden="false" 
-                            tabindex="0"
-                            allowfullscreen=""
-                            :src="`https://www.google.com/maps/embed/v1/search?key=AIzaSyCS2L4dKZ2g10zGbFKTxnV4jlOSWqUwAaE&q=${$context.address} + ${$context.town}&zoom=18`">
-                          </iframe>
-                        </div>
-                </center>
-                </div>
-                <div class="info mb-4">
-                  <p class="h5 info-title text-left mb-4">Weitere Informationen</p>
-                  <center>
-                   <table style="width:90%" class="fixed">
-                      <col width="30%" />
-                      
-                          <tr>
-                            <th>Angebotene Marken</th>
-                            <td>{{$context.brands}}</td>
-                          </tr>
-                          <br>
-                          <tr>
-                            <th>Schlagworte</th>
-                            <td>{{$context.keywords}}</td>
-                           </tr>
-                            
-                          
-                      </table>
-                    </center>
-                </div>
-              </b-col>
-            </b-row>
-          </div>
-        </div>
+        
       </vue-glide-slide>
       <vue-glide-slide>
-        <div class="new-card">
-        <div class="new-card-img">
-            <g-image src="~/assets/images/localdash.png" width="500"/>
-          </div>
-          <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
-            <div class="gmb-img">
-            <center>
-              <div>
-                <g-image :src="`${$context.image}`" width="100%" />   
-              </div>
-                      
-            </center>
-            </div>
-          </div>
-        </div>
+        
       </vue-glide-slide>
       <vue-glide-slide>
-        <div class="new-card">
-        <div class="new-card-img">
-            <g-image src="~/assets/images/localdash.png" width="500"/>
-          </div>
-          <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
-                  <p class="h5 info-title text-center mb-4">Weitere Informationen</p>
-                <center>
-                   <div>
-                      {{$context.greview_1_rating}} | {{$context.greview_1_zeit}} | greview_1_reviewer | <span>Localguide?</span>{{$context.greview_1_localguide}} <br> {{$context.greview_1_text}} <br> {{$context.greview_1_beantwortet}}
-                    </div>
-                </center>
-            </div>
-        </div>
+        
       </vue-glide-slide>
       
       <vue-glide-slide>
-        <div class="new-card">
-        <div class="new-card-img">
-            <g-image src="~/assets/images/localdash.png" width="500"/>
-          </div>
-          <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
-            <div class="gmb-img">
-            <center>
-           <g-image src="~/assets/images/localdash.png"/>
-            </center>
-            </div>
-          </div>
-        </div>
+        
       </vue-glide-slide>
       <vue-glide-slide>
-        <div class="new-card">
-         <div class="new-card-img">
-            <g-image src="~/assets/images/localdash.png" width="500"/>
-          </div>
-          <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
-            <p class="h5 info-title text-center mb-4">Weitere Informationen</p>
-            <p class="info-text card-1-text">Sehr geehrte Damen und Herren,<br>
-            wie Sie sicher bereits mitbekommen haben werden Bewertungen auf diversen, teilweise Branchenspezifischen Bewertungsplattformen immer wichtiger. Die Speerspitze der Plattformen bildet hier Google mit dem Service “My Business”. So werden Google Nutzern, die nach einer speziellen Dienstleistung suchen, direkt die besten 3 Unternehmen aus der Region angezeigt. Diese Platzierung in den Top 3 der Google Suche, ist durch die korrekte Nutzung von Google My Business möglich. Ist diese Position erreicht, erhalten Sie täglich die Aufmerksamkeit von Interessenten Ihrer Branche, die gerade aktiv nach einem lokalen Dienstleister suchen. Durch die guten Bewertungen dieser Top 3 werden 79% (Quelle: Google.com) aller Suchanfragen zumindest zu einem Kontakt per Telefon oder auch zu einem direkten Besuch vor Ort. Die Top 1 bekommt natürlich den größten Anteil aller Suchanfragen ab. Der Unterschied zu gewöhnlichem Marketing ist hier, dass man den Interessenten genau dann mit Ihrem Unternehmen konfrontiert, wenn er gerade aktiv nach einem Anbieter sucht.
-            Die Qualität dieser Suchanfragen ist unbezahlbar und nur durch die Top 3 Platzierung erreichbar.<br><br>
-            Weiter haben wir festgestellt, dass viele unserer Kunden, die zu 90% aus lokalen Dienstleistern wie Ihnen bestehen, oft dieselben Probleme in der Nutzung des Internet für Ihre Kundenkommunikation haben. Durch Unwissenheit wird z.B. häufig die Chance ausgelassen, Ihre Kunden auf Ihren Smartphones verlässlich zu erreichen. Dies kann zB genutzt werden um an schwachen Tagen mit besonderen Angeboten an Ihre Bestandskunden spontan für Umsätze zu sorgen, die ohne dieses kleine technische System nicht erzielt worden wären. 
-            </p>
-          </div>
-        </div>
+        
       </vue-glide-slide>
      <!-- <vue-glide-slide>
         <div class="new-card">
@@ -222,20 +249,25 @@
           </div>
         </div>
       </vue-glide-slide>-->
-      <template slot="control" class="control">
+      <!--<template slot="control" class="control">
         <button data-glide-dir="<">prev</button>
         <button data-glide-dir=">">next</button>
-      </template>
+      </template>-->
     </vue-glide>
-      </b-row>  
+      </b-row>
+      
     </b-container>
   </Layout>
 </template>
 
 <script>
-import { Glide, GlideSlide } from 'vue-glide-js'
+import { Glide, GlideSlide } from 'vue-glide-js';
+import { Hooper, Slide, Navigation as HooperNavigation } from 'hooper';
+import 'hooper/dist/hooper.css';
+
 export default {
     name: 'carrousel',
+    name: 'App',
     data() {
       return {
         perView: 1,
@@ -250,6 +282,7 @@ export default {
         rewindDuration: 0,
         animationDuration: 200,
         info: null,
+        carouselData: 0,
         breakpoints: {
           800: {
             perView: 1,
@@ -265,9 +298,18 @@ export default {
       }
     },
 
+    watch: {
+    carouselData () {
+      this.$refs.carousel.slideTo(this.carouselData);
+    }
+  },
+
     components: {
         [Glide.name]: Glide,
-        [GlideSlide.name]: GlideSlide
+        [GlideSlide.name]: GlideSlide,
+        Hooper,
+        Slide,
+        HooperNavigation
     },
     computed: {
 
@@ -278,7 +320,16 @@ export default {
       },
       forward() {
         glide.go('>')
-      }
+      },
+      slidePrev() {
+      this.$refs.carousel.slidePrev();
+    },
+    slideNext() {
+      this.$refs.carousel.slideNext();
+    },
+    updateCarousel(payload) {
+      this.myCarouselData = payload.currentSlide;
+    }
     },
 
 }

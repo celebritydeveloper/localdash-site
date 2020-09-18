@@ -2,13 +2,13 @@
   <Layout>
     <b-container>
       <b-row align-v="center">
-        <b-container class="new-card-img">
+        <div class="new-card-img py-2">
           <b-row>
             <b-col>
-              <g-image src="~/assets/images/localdash.png"/>
+              <g-image src="~/assets/images/localdash.png" width="1600" />
             </b-col>
           </b-row>
-        </b-container>
+        </div>
         <b-container class="text-center mt-3">
           <b-row>
             <b-col>
@@ -136,7 +136,7 @@
             </div>
         </slide>
 
-        <slide>
+        <slide style="height: 100vh;">
           <div class="new-card">
           <!--<div class="new-card-img">
               <g-image src="~/assets/images/localdash.png" width="500"/>
@@ -144,7 +144,7 @@
             <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
               <div class="gmb-img">
               <center>
-            <g-image src="~/assets/images/localdash.png"/>
+                <g-image src="~/assets/images/localdash.png"/>
               </center>
               </div>
             </div>
@@ -172,33 +172,6 @@
         </slide>
       
       </hooper>
-      <vue-glide 
-      :type="type" 
-      :startAt="startAt" 
-      :perView="perView" 
-      :autoplay="autoplay" 
-      :hoverpause="hoverpause"
-      :breakpoints="breakpoints"
-      :gap="gap"
-      :rewind="rewind"
-      
-      >
-      <vue-glide-slide>
-        
-      </vue-glide-slide>
-      <vue-glide-slide>
-        
-      </vue-glide-slide>
-      <vue-glide-slide>
-        
-      </vue-glide-slide>
-      
-      <vue-glide-slide>
-        
-      </vue-glide-slide>
-      <vue-glide-slide>
-        
-      </vue-glide-slide>
      <!-- <vue-glide-slide>
         <div class="new-card">
           <div class="new-card-img">
@@ -253,7 +226,7 @@
         <button data-glide-dir="<">prev</button>
         <button data-glide-dir=">">next</button>
       </template>-->
-    </vue-glide>
+
       </b-row>
       
     </b-container>

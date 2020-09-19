@@ -2,24 +2,24 @@
   <Layout>
     <b-container>
       <b-row align-v="center">
-        <div class="new-card-img py-2">
+        <div class="new-card-img">
           <b-row>
             <b-col>
-              <g-image src="~/assets/images/localdash.png" width="1600" />
+              <g-image src="~/assets/images/localdash-1.png"/>
             </b-col>
           </b-row>
         </div>
         <b-container class="text-center mt-3">
           <b-row>
             <b-col>
-              <b-button variant="secondary" @click.prevent="slidePrev" size="lg">Back</b-button>
+              <b-button @click.prevent="slidePrev" size="lg"> &lt; ZURÜCK </b-button>
             </b-col>
             <b-col>
-              <b-button variant="secondary" @click.prevent="slideNext" size="lg">Forward</b-button>
+              <b-button @click.prevent="slideNext" size="lg">WEITER &gt; </b-button>
             </b-col>
           </b-row>
       </b-container>
-      <hooper ref="carousel" @slide="updateCarousel" class="mb-5" style="height: 100vh;">
+      <hooper ref="carousel" @slide="updateCarousel" class="mb-3"  style="height: 100vh;">
         <slide>
           <div class="new-card">    
             <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
@@ -29,7 +29,7 @@
                     <p class="h5 info-title text-left mb-4">Allgemeine Informationen</p>
                     <center>
                     <table style="width:90%" class="fixed">
-                        <col width="30%" />
+                        <col width="40%" />
                             <tr>
                               <th>Name</th>
                               <td>{{$context.name}}</td>
@@ -45,11 +45,12 @@
                     <p class="h5 info-title text-left mb-4">Ihre Kontaktangaben</p>
                     <center>
                     <table style="width:90%" class="fixed">
-                        <col width="30%" />
+                        <col width="40%" />
                         
                             <tr>
                               <th>Telefon</th>
-                              <td>{{$context.phone}}</td>
+                              <td v-if="$context.phone != ''">{{$context.phone}}</td>
+                              <td v-else>No phone number found</td>
                             </tr>
                             <tr>
                               <th>E-Mail</th>
@@ -81,7 +82,7 @@
                     <p class="h5 info-title text-left mb-4">Weitere Informationen</p>
                     <center>
                     <table style="width:90%" class="fixed">
-                        <col width="30%" />
+                        <col width="40%" />
                         
                             <tr>
                               <th>Angebotene Marken</th>
@@ -105,7 +106,7 @@
         <slide>
           <div class="new-card">
             <!--<div class="new-card-img">
-                <g-image src="~/assets/images/localdash.png" width="500"/>
+                <g-image src="~/assets/images/localdash-1.png" width="500"/>
             </div>-->
               <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
                 <div class="gmb-img">
@@ -123,38 +124,51 @@
         <slide>
           <div class="new-card">
             <!--<div class="new-card-img">
-                <g-image src="~/assets/images/localdash.png" width="500"/>
+                <g-image src="~/assets/images/localdash-1.png" width="500"/>
               </div>-->
               <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
                       <p class="h5 info-title text-center mb-4">Weitere Informationen</p>
                     <center>
                       <div>
-                          {{$context.greview_1_rating}} | {{$context.greview_1_zeit}} | greview_1_reviewer | <span>Localguide?</span>{{$context.greview_1_localguide}} <br> {{$context.greview_1_text}} <br> {{$context.greview_1_beantwortet}}
-                        </div>
+                        {{$context.greview_1_rating}} | {{$context.greview_1_zeit}} | greview_1_reviewer | <span>Localguide?</span>{{$context.greview_1_localguide}} <br> {{$context.greview_1_text}} <br> {{$context.greview_1_beantwortet}}
+                      </div>
+                      <div>
+                        {{$context.greview_1_rating}} | {{$context.greview_2_zeit}} | greview_2_reviewer | <span>Localguide?</span>{{$context.greview_2_localguide}} <br> {{$context.greview_2_text}} <br> {{$context.greview_2_beantwortet}}
+                      </div>
+                      <div>
+                        {{$context.greview_3_rating}} | {{$context.greview_3_zeit}} | greview_3_reviewer | <span>Localguide?</span>{{$context.greview_3_localguide}} <br> {{$context.greview_3_text}} <br> {{$context.greview_3_beantwortet}}
+                      </div>
+                      <div>
+                        {{$context.greview_4_rating}} | {{$context.greview_4_zeit}} | greview_4_reviewer | <span>Localguide?</span>{{$context.greview_4_localguide}} <br> {{$context.greview_4_text}} <br> {{$context.greview_4_beantwortet}}
+                      </div>
+                      <div>
+                        {{$context.greview_5_rating}} | {{$context.greview_5_zeit}} | greview_5_reviewer | <span>Localguide?</span>{{$context.greview_5_localguide}} <br> {{$context.greview_5_text}} <br> {{$context.greview_5_beantwortet}}
+                      </div>
+                      <div>
+                        {{$context.greview_6_rating}} | {{$context.greview_6_zeit}} | greview_6_reviewer | <span>Localguide?</span>{{$context.greview_6_localguide}} <br> {{$context.greview_6_text}} <br> {{$context.greview_6_beantwortet}}
+                      </div>
+                      <div>
+                        {{$context.greview_7_rating}} | {{$context.greview_7_zeit}} | greview_7_reviewer | <span>Localguide?</span>{{$context.greview_7_localguide}} <br> {{$context.greview_7_text}} <br> {{$context.greview_7_beantwortet}}
+                      </div>
+                      <div>
+                        {{$context.greview_8_rating}} | {{$context.greview_8_zeit}} | greview_8_reviewer | <span>Localguide?</span>{{$context.greview_8_localguide}} <br> {{$context.greview_8_text}} <br> {{$context.greview_8_beantwortet}}
+                      </div>
+                      <div>
+                        {{$context.greview_9_rating}} | {{$context.greview_9_zeit}} | greview_9_reviewer | <span>Localguide?</span>{{$context.greview_9_localguide}} <br> {{$context.greview_9_text}} <br> {{$context.greview_9_beantwortet}}
+                      </div>
+                      <div>
+                        {{$context.greview_10_rating}} | {{$context.greview_10_zeit}} | greview_10_reviewer | <span>Localguide?</span>{{$context.greview_10_localguide}} <br> {{$context.greview_10_text}} <br> {{$context.greview_10_beantwortet}}
+                      </div>
                     </center>
                 </div>
             </div>
         </slide>
-
-        <slide style="height: 100vh;">
-          <div class="new-card">
-          <!--<div class="new-card-img">
-              <g-image src="~/assets/images/localdash.png" width="500"/>
-            </div>-->
-            <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
-              <div class="gmb-img">
-              <center>
-                <g-image src="~/assets/images/localdash.png"/>
-              </center>
-              </div>
-            </div>
-          </div>
-        </slide>
+        
 
         <slide>
           <div class="new-card">
           <!--<div class="new-card-img">
-              <g-image src="~/assets/images/localdash.png" width="500"/>
+              <g-image src="~/assets/images/localdash-1.png" width="500"/>
             </div>-->
             <div class="mt-4 new-card-body" lg="4" xl="4" sm="12" xm="12">
               <p class="h5 info-title text-center mb-4">Weitere Informationen</p>
@@ -167,9 +181,7 @@
           </div>
         </slide>
 
-        <slide style="color: white;">
-          slide 3
-        </slide>
+        
       
       </hooper>
      <!-- <vue-glide-slide>
@@ -377,17 +389,20 @@ export default {
       border: 1px solid #5eb9e5;
       display: flex;
       overflow: hidden;
-      height: 150px;
+      height: 100%;
       padding: 0.3rem 0.3rem;
       margin-top: 5px;
+      width: 100%;
     }
 
-    .new-card-img img{
-      display: flex;
-      border-radius: 6px;
-      height: 175px;
-      object-fit: none;
-      width: 100%;
+    .new-card-img img{ 
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 60%;   
+      margin-bottom: 5px;
+      margin-top: 5px;
+      
     }
 
     .new-card-body {
@@ -397,6 +412,9 @@ export default {
       min-height: 320px;
       padding: 0.9rem 0.9rem;
       text-align: left;
+      
+      
+      
     }
 
     .new-card-title {
@@ -447,6 +465,21 @@ export default {
     .control {
       position: absolute !important;
       top: 0 !important;
+    }
+
+    .btn-lg {  
+      color: #5eb9e5;     
+      border-radius: 0px;
+      background-color: #2c3e50;  
+      width: 100%;    
+    }
+
+    #app {
+      max-width: 525px;
+    }
+
+    .hooper {
+      outline: none;
     }
 
 </style>
